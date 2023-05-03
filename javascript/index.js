@@ -28,7 +28,30 @@
 
 
 // Iteration 1 - using callbacks
-// ...
+function printMashedPotatoesStep(step) {
+  document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
+}
+
+getInstruction('mashedPotatoes', 0, (step0) => {
+  printMashedPotatoesStep(step0);
+  getInstruction('mashedPotatoes', 1, (step1) => {
+    printMashedPotatoesStep(step1);
+    getInstruction('mashedPotatoes', 2, (step2) => {
+      printMashedPotatoesStep(step2);
+      getInstruction('mashedPotatoes', 3, (step3) => {
+        printMashedPotatoesStep(step3);
+        getInstruction('mashedPotatoes', 4, (step4) => {
+          printMashedPotatoesStep(step4);
+          getInstruction('mashedPotatoes', 5, (step5) => {
+            printMashedPotatoesStep(step5);
+            printMashedPotatoesStep("Mashed potatoes are ready!");
+          });
+        });
+      });
+    });
+  });
+});
+
 
 // Iteration 2 - using promises
 // ...
